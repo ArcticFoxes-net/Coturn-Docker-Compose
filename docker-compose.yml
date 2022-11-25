@@ -29,7 +29,7 @@ services:
     cap_drop:
       - ALL
   acme:
-    image: neilpang/acme.sh
+    image: neilpang/acme.sh:latest
     container_name: acme
     command: daemon
     volumes:
