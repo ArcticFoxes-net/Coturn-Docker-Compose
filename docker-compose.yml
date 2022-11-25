@@ -25,6 +25,11 @@ services:
       - redis:/data
     ports:
       - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: redis-cli ping
+      interval: 30s
+      timeout: 5s
+      retries: 2
     user: "999:1000"
     read_only: true
     security_opt:
