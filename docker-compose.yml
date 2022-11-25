@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./coturn:/etc/coturn:Z
-      - ./ssl:/etc/ssl/certs:Z
+      - ./ssl:/etc/ssl/certs:z
     network_mode: "host"
     user: "65534:65534"
     read_only: true
@@ -43,8 +43,8 @@ services:
     restart: unless-stopped
     command: daemon
     volumes:
-      - ./acme:/acme.sh
-      - ./ssl:/ssl
+      - ./acme:/acme.sh:Z
+      - ./ssl:/ssl:z
     network_mode: "host"
 
 volumes:
